@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZFG X CHEAT - Elite Coding & Security Services</title>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #9c27b0;
+            --secondary: #673ab7;
+            --accent: #2196f3;
+            --dark: #050505;
+            --light: #f5f5f5;
+            --success: #4caf50;
+            --hacker: #00ff00;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Courier New', monospace;
+        }
+
+        body {
+            background-color: var(--dark);
+            color: var(--light);
+            overflow-x: hidden;
+        }
+
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        header {
+            background: linear-gradient(135deg, rgba(0,255,0,0.2), rgba(156, 39, 176, 0.8));
+            padding: 1rem;
+            box-shadow: 0 4px 12px rgba(0, 255, 0, 0.5);
+            position: relative;
+            z-index: 10;
+            border-bottom: 1px solid var(--hacker);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: pulse 2s infinite, glitch 1s infinite alternate;
+        }
+
+        .logo-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, var(--primary), var(--hacker));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.7);
+            animation: rotate 8s linear infinite;
+        }
+
+        .logo-text {
+            font-size: 2rem;
+            font-weight: bold;
+            background: linear-gradient(to right, #ffffff, #00ff00);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+        }
+
+        .logo-text span {
+            color: var(--accent);
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        nav a {
+            color: var(--hacker);
+            text-decoration: none;
+            margin: 0 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            transition: all 0.3s;
+            font-weight: bold;
+            border: 1px solid var(--hacker);
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        nav a:hover {
+            background-color: rgba(0, 255, 0, 0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+        }
+
+        .hero {
+            text-align: center;
+            padding: 5rem 2rem;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, var(--hacker), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: fadeIn 1s ease-in-out, glitch 3s infinite alternate;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+            animation: fadeIn 1.5s ease-in-out;
+            color: #00ff00;
+        }
+
+        .terminal {
+            background-color: rgba(0,0,0,0.7);
+            border: 2px solid var(--hacker);
+            border-radius: 5px;
+            padding: 1rem;
+            max-width: 800px;
+            margin: 2rem auto;
+            text-align: left;
+            font-family: monospace;
+            position: relative;
+        }
+
+        .terminal-header {
+            display: flex;
+            margin-bottom: 0.5rem;
+        }
+
+        .terminal-btn {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+
+        .terminal-btn.close { background-color: #ff5f56; }
+        .terminal-btn.minimize { background-color: #ffbd2e; }
+        .terminal-btn.expand { background-color: #27c93f; }
+
+        .terminal-content {
+            color: var(--hacker);
+        }
+
+        .terminal-line {
+            margin-bottom: 0.5rem;
+        }
+
+        .terminal-prompt {
+            color: var(--accent);
+            margin-right: 0.5rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: linear-gradient(45deg, var(--hacker), var(--accent));
+            color: black;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 255, 0, 0.6);
+            animation: pulse 2s infinite;
+            border: none;
+            font-family: 'Courier New', monospace;
+            text-transform: uppercase;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 255, 0, 0.8);
+        }
+
+        .services {
+            padding: 4rem 2rem;
+            background-color: rgba(0,0,0,0.3);
+            border-top: 1px solid var(--hacker);
+            border-bottom: 1px solid var(--hacker);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: rgba(0,0,0,0.5);
+            border-radius: 10px;
+            padding: 2rem;
+            transition: all 0.3s;
+            border: 1px solid var(--hacker);
+            backdrop-filter: blur(5px);
+            animation: fadeInUp 1s ease-in-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--hacker), var(--accent));
+            animation: scanline 2s linear infinite;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 255, 0, 0.3);
+            border-color: var(--accent);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--hacker);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--hacker);
+            text-transform: uppercase;
+        }
+
+        .service-card p {
+            color: #cccccc;
+            line-height: 1.6;
+        }
+
+        .hacking-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .hacking-image {
+            border-radius: 5px;
+            overflow: hidden;
+            border: 1px solid var(--hacker);
+            transition: all 0.3s;
+            height: 180px;
+        }
+
+        .hacking-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+        }
+
+        .hacking-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s;
+        }
+
+        .hacking-image:hover img {
+            transform: scale(1.1);
+        }
+
+        .about {
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, rgba(0,0,0,0.5), rgba(33, 150, 243, 0.2));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(rgba(0,255,0,0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,255,0,0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+            z-index: -1;
+        }
+
+        .about-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-text h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--hacker);
+            text-transform: uppercase;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+
+        .about-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            animation: float 5s ease-in-out infinite;
+            border: 1px solid var(--hacker);
+        }
+
+        .social {
+            padding: 4rem 2rem;
+            text-align: center;
+            background-color: rgba(0,0,0,0.5);
+            border-top: 1px solid var(--hacker);
+        }
+
+        .social h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--hacker);
+            text-transform: uppercase;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .social-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(45deg, rgba(0,255,0,0.1), rgba(156, 39, 176, 0.8));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--hacker);
+            font-size: 1.8rem;
+            transition: all 0.3s;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0, 255, 0, 0.4);
+            border: 1px solid var(--hacker);
+        }
+
+        .social-icon:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 10px 20px rgba(0, 255, 0, 0.6);
+            background: linear-gradient(45deg, var(--primary), var(--hacker));
+            color: black;
+        }
+
+        .feedback {
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, rgba(0,0,0,0.6), rgba(103, 58, 183, 0.2));
+            border-top: 1px solid var(--hacker);
+            position: relative;
+        }
+
+        .feedback::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 7px,
+                    rgba(0,255,0,0.1) 1px,
+                    rgba(0,255,0,0.1) 8px
+                ),
+                repeating-linear-gradient(
+                    90deg,
+                    transparent,
+                    transparent 7px,
+                    rgba(0,255,0,0.1) 1px,
+                    rgba(0,255,0,0.1) 8px
+                );
+            opacity: 0.5;
+            z-index: -1;
+        }
+
+        .feedback-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(0,0,0,0.7);
+            padding: 2rem;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 10px 30px rgba(0, 255, 0, 0.3);
+            border: 1px solid var(--hacker);
+        }
+
+        .feedback h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--hacker);
+            text-transform: uppercase;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--hacker);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border-radius: 5px;
+            border: 1px solid var(--hacker);
+            background-color: rgba(0,0,0,0.5);
+            color: var(--hacker);
+            transition: all 0.3s;
+            font-family: 'Courier New', monospace;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--accent);
+            background-color: rgba(0,0,0,0.7);
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: linear-gradient(45deg, var(--hacker), var(--accent));
+            color: black;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: block;
+            width: 100%;
+            margin-top: 1rem;
+            font-family: 'Courier New', monospace;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 255, 0, 0.8);
+        }
+
+        .submit-btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent 45%, rgba(255,255,255,0.2) 50%, transparent 55%);
+            background-size: 200% 200%;
+            animation: shine 2s infinite;
+            pointer-events: none;
+        }
+
+        footer {
+            background: linear-gradient(135deg, rgba(0,0,0,0.8), rgba(156, 39, 176, 0.8));
+            padding: 2rem;
+            text-align: center;
+            color: var(--hacker);
+            border-top: 1px solid var(--hacker);
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="none" stroke="%2300ff00" stroke-width="0.5"/></svg>');
+            background-size: 20px 20px;
+            opacity: 0.2;
+            z-index: -1;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo .logo-icon {
+            width: 40px;
+            height: 40px;
+            margin-right: 0.5rem;
+        }
+
+        .footer-logo .logo-text {
+            font-size: 1.5rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: var(--hacker);
+            text-decoration: none;
+            transition: all 0.3s;
+            border: 1px solid var(--hacker);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            background-color: rgba(0,0,0,0.3);
+        }
+
+        .footer-links a:hover {
+            color: black;
+            background-color: var(--hacker);
+        }
+
+        .copyright {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Animations */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.05);
+                opacity: 0.8;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes scanline {
+            from {
+                transform: translateX(-100%);
+            }
+            to {
+                transform: translateX(100%);
+            }
+        }
+
+        @keyframes glitch {
+            0% {
+                text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.7),
+                            -0.05em -0.025em 0 rgba(0, 255, 0, 0.7),
+                            -0.025em 0.05em 0 rgba(0, 0, 255, 0.7);
+            }
+            14% {
+                text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.7),
+                            -0.05em -0.025em 0 rgba(0, 255, 0, 0.7),
+                            -0.025em 0.05em 0 rgba(0, 0, 255, 0.7);
+            }
+            15% {
+                text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.7),
+                            0.025em 0.025em 0 rgba(0, 255, 0, 0.7),
+                            -0.05em -0.05em 0 rgba(0, 0, 255, 0.7);
+            }
+            49% {
+                text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.7),
+                            0.025em 0.025em 0 rgba(0, 255, 0, 0.7),
+                            -0.05em -0.05em 0 rgba(0, 0, 255, 0.7);
+            }
+            50% {
+                text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.7),
+                            0.05em 0 0 rgba(0, 255, 0, 0.7),
+                            0 -0.05em 0 rgba(0, 0, 255, 0.7);
+            }
+            99% {
+                text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.7),
+                            0.05em 0 0 rgba(0, 255, 0, 0.7),
+                            0 -0.05em 0 rgba(0, 0, 255, 0.7);
+            }
+            100% {
+                text-shadow: -0.025em 0 0 rgba(255, 0, 0, 0.7),
+                            -0.025em -0.025em 0 rgba(0, 255, 0, 0.7),
+                            -0.025em -0.05em 0 rgba(0, 0, 255, 0.7);
+            }
+        }
+
+        @keyframes shine {
+            0% {
+                background-position: 200% 0;
+            }
+            100% {
+                background-position: -200% 0;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+
+            .social-icons {
+                gap: 1rem;
+            }
+
+            .social-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+
+    <header>
+        <div class="logo">
+            <div class="logo-icon">
+                <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="black" stroke-width="2">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+            </div>
+            <div class="logo-text">ZFG <span>X</span> CHEAT</div>
+        </div>
+        <nav>
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#social">Connect</a>
+            <a href="#feedback">Feedback</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Elite Programming & Security Solutions</h1>
+        <p>Delivering high-quality C#, C++, Python, and Java development services with innovative solutions tailored to your needs. Our expert team provides cutting-edge programming services to elevate your projects.</p>
+        
+        <div class="terminal">
+            <div class="terminal-header">
+                <div class="terminal-btn close"></div>
+                <div class="terminal-btn minimize"></div>
+                <div class="terminal-btn expand"></div>
+            </div>
+            <div class="terminal-content">
+                <div class="terminal-line"><span class="terminal-prompt">$</span> Initializing ZFG X CHEAT systems...</div>
+                <div class="terminal-line"><span class="terminal-prompt">$</span> Loading security protocols...</div>
+                <div class="terminal-line"><span class="terminal-prompt">$</span> Ready to serve your coding needs!</div>
+            </div>
+        </div>
+        
+        <a href="#feedback" class="cta-button">GET STARTED</a>
+    </section>
+
+    <section class="services" id="services">
+        <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 2rem; color: var(--hacker);">OUR SERVICES</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon"><i class="fab fa-microsoft"></i></div>
+                <h3>C# Development</h3>
+                <p>Expert C# programming for desktop applications, game development with Unity, and enterprise solutions using .NET framework and .NET Core.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-code"></i></div>
+                <h3>C++ Solutions</h3>
+                <p>High-performance C++ coding for system programming, game engines, and applications requiring speed and efficiency with modern C++ standards.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fab fa-python"></i></div>
+                <h3>Python Programming</h3>
+                <p>Versatile Python development for web apps, data science, machine learning, automation scripts, and backend services with Django/Flask.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fab fa-java"></i></div>
+                <h3>Java Development</h3>
+                <p>Robust Java applications for Android, enterprise systems, and cross-platform solutions using Spring Framework and modern Java technologies.</p>
+            </div>
+        </div>
+
+        <div class="hacking-grid">
+            <div class="hacking-image">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/6fc3b55f-ccae-4264-ad69-5d4525c748de.png" alt="Digital security concept with glowing locks and hacker tools on dark background" />
+            </div>
+            <div class="hacking-image">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/00fe421a-49c4-4266-85ac-c29f3c2b7cac.png" alt="Programmer working late at night with multiple monitors showing code and cybersecurity alerts" />
+            </div>
+            <div class="hacking-image">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a3223eb7-e489-48dc-a5c6-a0c06a8f4fdf.png" alt="Abstract digital world representation with connections and data streams" />
+            </div>
+            <div class="hacking-image">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/3c63c3ee-57c7-4365-be01-3e17ed5c5f50.png" alt="Close-up of hands typing on a keyboard with glowing hacker theme" />
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>About ZFG X CHEAT</h2>
+                <p>We are an elite team of developers and security experts specializing in cutting-edge programming and cybersecurity solutions. Our mission is to deliver high-quality, secure, and innovative solutions that meet our clients' most demanding needs.</p>
+                <p>With years of experience in both development and security, we've completed projects ranging from small utilities to large-scale enterprise applications with complex security requirements.</p>
+                <p>Our team stays at the forefront of technology, constantly updating our skills to provide the most advanced solutions in the industry.</p>
+            </div>
+            <div class="about-image">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e2dbb4c8-3f3e-4333-85e8-949c3ad102a7.png" alt="ZFG X CHEAT team working in a high-tech security room with multiple monitors displaying code" />
+            </div>
+        </div>
+    </section>
+
+    <section class="social" id="social">
+        <h2>CONNECT WITH US</h2>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/zeroxffgaming4" class="social-icon" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.youtube.com/zeroxffgaming4" class="social-icon" target="_blank">
+                <i class="fab fa-youtube"></i>
+            </a>
+        </div>
+        <p style="margin-top: 2rem; color: var(--hacker);">Follow us on social media for updates, tutorials, and more!</p>
+    </section>
+
+    <section class="feedback" id="feedback">
+        <div class="feedback-container">
+            <h2>REQUEST OUR SERVICES</h2>
+            <form id="feedbackForm" method="POST" action="mailto:krishnakanhiya003@gmail.com" enctype="text/plain">
+                <div class="form-group">
+                    <label for="name">NAME</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">EMAIL</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="service">SERVICE INTERESTED IN</label>
+                    <select id="service" name="service">
+                        <option value="csharp">C# Development</option>
+                        <option value="cpp">C++ Solutions</option>
+                        <option value="python">Python Programming</option>
+                        <option value="java">Java Development</option>
+                        <option value="security">Security Services</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">MESSAGE</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">SEND MESSAGE</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-logo">
+            <div class="logo-icon">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="black" stroke-width="2">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+            </div>
+            <div class="logo-text">ZFG <span>X</span> CHEAT</div>
+        </div>
+        <div class="footer-links">
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#social">Connect</a>
+            <a href="#feedback">Contact</a>
+        </div>
+        <div class="copyright">
+            © 2023 ZFG X CHEAT. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Initialize particles.js with enhanced settings
+        document.addEventListener('DOMContentLoaded', function() {
+            particlesJS('particles-js', {
+                particles: {
+                    number: {
+                        value: 150,
+                        density: {
+                            enable: true,
+                            value_area: 800
+                        }
+                    },
+                    color: {
+                        value: "#00ff00"
+                    },
+                    shape: {
+                        type: "circle",
+                        stroke: {
+                            width: 0,
+                            color: "#000000"
+                        },
+                        polygon: {
+                            nb_sides: 5
+                        }
+                    },
+                    opacity: {
+                        value: 0.7,
+                        random: true,
+                        anim: {
+                            enable: true,
+                            speed: 1,
+                            opacity_min: 0.1,
+                            sync: false
+                        }
+                    },
+                    size: {
+                        value: 4,
+                        random: true,
+                        anim: {
+                            enable: true,
+                            speed: 4,
+                            size_min: 0.3,
+                            sync: false
+                        }
+                    },
+                    line_linked: {
+                        enable: true,
+                        distance: 120,
+                        color: "#00ff00",
+                        opacity: 0.4,
+                        width: 1
+                    },
+                    move: {
+                        enable: true,
+                        speed: 3,
+                        direction: "none",
+                        random: true,
+                        straight: false,
+                        out_mode: "out",
+                        bounce: false,
+                        attract: {
+                            enable: true,
+                            rotateX: 600,
+                            rotateY: 1200
+                        }
+                    }
+                },
+                interactivity: {
+                    detect_on: "canvas",
+                    events: {
+                        onhover: {
+                            enable: true,
+                            mode: "repulse"
+                        },
+                        onclick: {
+                            enable: true,
+                            mode: "push"
+                        },
+                        resize: true
+                    },
+                    modes: {
+                        grab: {
+                            distance: 180,
+                            line_linked: {
+                                opacity: 1
+                            }
+                        },
+                        bubble: {
+                            distance: 400,
+                            size: 40,
+                            duration: 2,
+                            opacity: 8,
+                            speed: 3
+                        },
+                        repulse: {
+                            distance: 100,
+                            duration: 0.4
+                        },
+                        push: {
+                            particles_nb: 10
+                        },
+                        remove: {
+                            particles_nb: 2
+                        }
+                    }
+                },
+                retina_detect: true
+            });
+
+            // Form submission handling
+            const form = document.getElementById('feedbackForm');
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form values
+                const name = document.getElementById('name').value;
+                const service = document.getElementById('service').value;
+                
+                // Submit the form via email
+                form.submit();
+                
+                // Show success message
+                alert(`Thank you, ${name}! Your message about ${service} has been sent. We'll contact you soon.`);
+                
+                // Reset form
+                form.reset();
+            });
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Add typing effect to terminal
+            const terminalLines = document.querySelectorAll('.terminal-line');
+            terminalLines.forEach((line, index) => {
+                const text = line.textContent.replace('$', '').trim();
+                line.innerHTML = `<span class="terminal-prompt">$</span>`;
+                
+                setTimeout(() => {
+                    let i = 0;
+                    const timer = setInterval(() => {
+                        if (i < text.length) {
+                            line.innerHTML += text.charAt(i);
+                            i++;
+                        } else {
+                            clearInterval(timer);
+                        }
+                    }, 50);
+                }, 1000 * index);
+            });
+        });
+    </script>
+</body>
+</html>
